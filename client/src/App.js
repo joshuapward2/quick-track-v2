@@ -19,8 +19,6 @@ function App() {
         <Header />
         <div className="container">
           <Routes>
-
-
             <Route
               path="/"
               element={<Home />}
