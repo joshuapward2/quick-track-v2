@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react'
 //importing pages
 import Login from './pages/Login';
 import Diet from './pages/Diet';
