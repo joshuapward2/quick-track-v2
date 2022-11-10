@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose'),
+const { Schema, model, Types } = require('mongoose'),
   bcrypt = require('bcrypt'),
   SALT_WORK_FACTOR = 10;
 
@@ -26,7 +26,13 @@ const UserSchema = new Schema(
       password: {
         type: String,
         required: true
-      }
+      },
+      posts: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: "Post"
+        }
+      ]
     },
     {
       toJSON: {

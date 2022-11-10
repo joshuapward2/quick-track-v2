@@ -12,16 +12,19 @@ const PostSchema = new Schema(
         type: Number,
         required: true
       },
-      user_id: {
-        type: Schema.Types.ObjectId,
-        default: () => new Types.ObjectId()
-      },
       createdAt: {
         type: Date,
         default: Date.now,
         get: createdAtVal => dateFormat(createdAtVal)
-      }
+      },
     },
+    {
+        toJSON: {
+            virtuals: true,
+            getters: true
+        },
+        id: false,
+    }
 );
 
 const Post = model('Post', PostSchema)
