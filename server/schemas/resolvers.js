@@ -1,4 +1,4 @@
-const { User, Post } = require('./models');
+const { User, Post } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
@@ -48,7 +48,7 @@ const resolvers = {
                 throw new AuthenticationError('Email or password is incorrect');
             }
 
-            const correctPw = await user.isCorrectPassword(password);
+            const correctPw = await user.comparePassword(password);
 
             if(!correctPw) {
                 throw new AuthenticationError('Email or password is incorrect');
