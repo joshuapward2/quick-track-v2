@@ -7,6 +7,7 @@ const typeDefs = gql`
         username: String
         password: String
         email: String
+        posts: [Post]
     }
 
     type Post {
@@ -20,7 +21,7 @@ const typeDefs = gql`
         me: User
         users: [User]
         user(email: String!): User
-        posts: [Post]
+        posts(username: String): [Post]
         post(_id: ID!): Post
     }
 
@@ -30,3 +31,5 @@ const typeDefs = gql`
         addPost(title: String!, calories: Int!)
     }
 `
+
+module.exports = typeDefs;
