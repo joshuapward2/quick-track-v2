@@ -3,9 +3,11 @@ import React from 'react';
 
 function Home() {
 return (
+
 	<div className="container">
 	{/* <div>Hello world from Login</div> */}
         <div>
+
             <div className="card">
                 <div className="card-content">
                     <h3 className="total-calories center-align">

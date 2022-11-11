@@ -37,6 +37,7 @@ function Login () {
                 <div className="card-content">
                     <span className="card-title">Create Account</span>
                     <form className="signup-form">
+
                         <div>
                             <label for="username-signup">username:</label>
                             <input type="text" id="username-signup" />
@@ -49,12 +50,15 @@ function Login () {
                             <label for="password-signup">password:</label>
                             <input type="password" id="password-signup" />
                         </div>
+
+
                         <div>
                             <Button class="add-btn btn-small blue z-depth-2" type="submit">signup</Button>
                         </div>
                     </form>
                 </div>
             </Card>
+
         </div>
     </div>
     
