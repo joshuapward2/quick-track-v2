@@ -23,7 +23,7 @@ module.exports = {
       }
 
       try {
-        const { data } = jwt.verify(token, secret, { maxAge: expiration });
+        const { data } = jwt.verify(token, serverSecret, { maxAge: expiration });
         req.user = data;
       }
       catch {
