@@ -12,8 +12,9 @@ return (
         
        
         <nav className="text-center">
-            <Link to="/">Home</Link>
-          <Link to="/login">Login</Link>
+            
+          <Link to="/">Login</Link>
+          <Link to="/home">Home</Link>
           <Link to="/diet">Diet</Link>
           <h2>Hello World!</h2>
         </nav>
