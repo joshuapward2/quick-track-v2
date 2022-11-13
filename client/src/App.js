@@ -4,6 +4,8 @@ import React from 'react'
 import Login from './pages/Login';
 import Diet from './pages/Diet';
 import Home from './pages/Home';
+import Profile from './pages/Profile'
+
 // importing components
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -21,24 +23,24 @@ function App() {
         <div className="container">
           <Routes>
             <Route
-              path="/"
+              path="/home"
               element={<Home />}
             />
             <Route
-              path="/login"
+              path="/"
               element={<Login />}
             />
             <Route
               path="/diet"
               element={<Diet />}
             />
-            {/*Below can be used if we want render a certain page using a username if we decide to}
+            {/* {/*Below can be used if we want render a certain page using a username if we decide to} */}
 
-            {/* <Route path="/profile">
+             <Route path="/profile">
               <Route path=":username" element={<Profile />} />
               <Route path="" element={<Profile />} />
             </Route>
-             */}
+             
 
            
           </Routes>

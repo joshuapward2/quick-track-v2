@@ -51,7 +51,6 @@ return (
 								<i className="fa fa-plus"></i>
 								&nbsp; Add Meal
 							</button>
-
 						</div>
 					</form>
 				</div>
