@@ -3,7 +3,7 @@ import React from 'react'
 //importing pages
 import Login from './pages/Login';
 import Diet from './pages/Diet';
-import Home from './pages/Login';
+import Home from './pages/Home';
 // importing components
 import Header from './components/Header';
 import Footer from './components/Footer';

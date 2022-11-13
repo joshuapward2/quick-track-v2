@@ -3,6 +3,7 @@ import React from 'react';
 
 function Home() {
 return (
+<div className="homeContainer">
 <div className="container">
 {/* <div>Hello world from Login</div> */}
 
@@ -46,7 +47,7 @@ return (
 							</div>
 
 							
-							<button className="add-btn btn green darken-3">
+							<button className="add-btn btn">
 								<i className="fa fa-plus"></i>
 								&nbsp; Add Meal
 							</button>
@@ -57,7 +58,7 @@ return (
 			</div>
         </div>
      </div>
-          
+</div>    
 )
 
 }

@@ -10,7 +10,7 @@ return(
         <div className="card-content">
             <span className="card-title">login</span>
             <form action="" class="login-form col">
-                <div className="row">
+                <Row className="row">
                     <div className="input-field col s6">
                         <div>
                         <label for="email-login">email:</label>
@@ -24,7 +24,7 @@ return(
                         <Button className="add-btn btn-small blue z-depth-2" type="submit">login</Button>
                         </div>
                     </div>
-                </div>
+                </Row>
             </form>
         </div>
     </div>

@@ -1,4 +1,5 @@
 body {
+  background-color: #202020; 
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +11,29 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.card {
+  background-color: #404040;
+}
+
+.total-calories {
+  color: white;
+}
+
+.card-title {
+  color: white;
+  font-weight: bold;
+}
+
+nav {
+  background-color: #b300b3;
+}
+
+.add-btn {
+  background-color: #b300b3;
+}
+
+.bg-secondary {
+  background: color #404040 !important;
 }
