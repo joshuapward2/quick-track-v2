@@ -1,20 +1,38 @@
 const express = require("express");
-const mongoose = require('mongoose');
+const { ApolloServer } = require('apollo-server-express');
+const{ authMiddleware } = require('./utils/auth');
+const path = require('path');
+
+const { typeDefs, resolvers } = require('./schemas');
+const db = require('./config/connection');
 
 const PORT = process.env.PORT || 3001;
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: authMiddleware
+});
+
+
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(require("./routes"));
+if(process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, './client/build')));
+}
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/quickTrackDB', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+const startApolloServer = async (typeDefs, resolvers) => {
+  await server.start();
 
-// Use this to log mongo queries being executed!
-mongoose.set('debug', true);
+  server.applyMiddleware({ app });
 
-app.listen(PORT, () => console.log(`🌍 Connected on localhost:${PORT}`));
+  db.once('open', () => {
+    app.listen(PORT, () => {
+      console.log(`Server running: PORT ${PORT}`);
+    });
+  });
+};
+
+startApolloServer(typeDefs, resolvers);

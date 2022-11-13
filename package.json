@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\""
+  },
   "dependencies": {
     "concurrently": "^7.5.0"
   }
