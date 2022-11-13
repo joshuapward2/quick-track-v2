@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'materialize-css';
 import { Button, Card, Row, Col } from 'react-materialize';
 
 // imports from graphql and utils
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
 
-import Auth from '../utils/auth';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../../utils/mutations';
+
+import Auth from '../../utils/auth';
 
 
 const Login = (props) => {
@@ -89,6 +89,8 @@ return(
         </div>
     </div>
 </div>
+      
+
       
       
 <div className="containerOne">
