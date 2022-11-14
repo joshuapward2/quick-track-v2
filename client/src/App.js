@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Diet from './pages/Diet';
 import Home from './pages/Home';
 import Profile from './pages/Profile'
+import Signup from './components/Signup';
 
 //importing apollo
 import {
@@ -59,7 +60,11 @@ function App() {
               path="/"
               element={<Login />}
             />
-            <Route
+             <Route 
+                path="/signup" 
+                element={<Signup />} 
+              />
+            <Route 
               path="/diet"
               element={<Diet />}
             />

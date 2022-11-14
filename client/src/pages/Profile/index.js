@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react';
 
 // //importing materialize
 // import 'materialize-css';
@@ -11,7 +11,7 @@
 // // import { useQuery } from '@apollo/client';
 // // import { QUERY_USER } from '../utils/queries';
 
-// function Profile() {
+function Profile() {
 
 //     // const { username: userParam } = useParams()
 
@@ -25,19 +25,16 @@
 //     //   if (loading) {
 //     //     return <div>Loading...</div>;
 //       }
-//     return(
+    return(
 //         <div>
 //             <h2 className="bg-dark text-secondary p-3 display-inline-block">
 //           Welcome {user.username} to your Profile page! This is where you'll find the tools you need to achieve your nutrtion goals!
 //         </h2>
      
 //         </div>
-       
-//     )
-{/* < Feature1 />
-< Feature2 />
-< Feature3 /> */}
+       <div></div>
+    )
 
-// }
+}
 
-// export default Profile;
+export default Profile;
