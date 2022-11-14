@@ -16,6 +16,7 @@ return (
           <Link to="/">Login</Link>
           <Link to="/home">Home</Link>
           <Link to="/diet">Diet</Link>
+          
           <h2>Hello World!</h2>
         </nav>
       </div>
