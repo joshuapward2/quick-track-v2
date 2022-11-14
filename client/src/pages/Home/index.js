@@ -3,11 +3,11 @@ import React from 'react';
 
 function Home() {
 return (
+<div className="homeContainer">
+<div className="container">
+{/* <div>Hello world from Login</div> */}
 
-	<div className="container">
-	{/* <div>Hello world from Login</div> */}
-        <div>
-
+           <div>
             <div className="card">
                 <div className="card-content">
                     <h3 className="total-calories center-align">
@@ -47,7 +47,7 @@ return (
 							</div>
 
 							
-							<button className="add-btn btn green darken-3">
+							<button className="add-btn btn">
 								<i className="fa fa-plus"></i>
 								&nbsp; Add Meal
 							</button>
@@ -57,7 +57,7 @@ return (
 			</div>
         </div>
      </div>
-          
+</div>    
 )
 
 }
