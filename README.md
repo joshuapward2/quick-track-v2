@@ -19,8 +19,8 @@ but you were limited on what you were able to do. That is no longer the case. Yo
 Heroku link
 
 # Application Team
-* Trevor Grilley - [Trevor Grilley](https://github.com/trevorgrilley)
-* Ricky Deakins - [Ricky Deakins] (https://github.com/Rdeaki)
-* Joshua Ward - [Joshua Ward] (https://github.com/joshuapward2)
-* Jacob Brister - [Jacob Brister] (https://github.com/jbrister71)
-* Kasey Crocker - [Kasey Crocker (https://github.com/KaseyCrocker)
+* [Trevor Grilley](https://github.com/trevorgrilley)
+* [Ricky Deakins](https://github.com/Rdeaki)
+* [Joshua Ward](https://github.com/joshuapward2)
+* [Jacob Brister](https://github.com/jbrister71)
+* [Kasey Crocker](https://github.com/KaseyCrocker)
