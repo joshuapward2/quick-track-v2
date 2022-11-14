@@ -1,6 +1,9 @@
+
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
+
+
 
 //Materialize import
 import { Button, Card, Row, Col } from 'react-materialize';
@@ -47,7 +50,7 @@ const Signup = () => {
             <span className="card-title">Create Account</span>
             <form onSubmit={handleFormSubmit}>
                     <div>
-                    <label for="username-signup">username:</label>
+                    <label htmlFor="username-signup">username:</label>
                     <input
                    className="form-input"
                    placeholder="Your username"
@@ -59,7 +62,7 @@ const Signup = () => {
                   />
                     </div>
                     <div>
-                    <label for="email-signup">email:</label>
+                    <label htmlFor="email-signup">email:</label>
                     <input
                     className="form-input"
                     placeholder="Your email"
@@ -71,7 +74,7 @@ const Signup = () => {
                     />
                     </div>
                     <div>
-                    <label for="password-signup">password:</label>
+                    <label htmlFor="password-signup">password:</label>
                     <input
                     className="form-input"
                     placeholder="******"
@@ -83,7 +86,7 @@ const Signup = () => {
                     />
                     </div>
                     <div>
-                    <Button class="add-btn btn-small blue z-depth-2" type="submit">signup</Button>
+                    <Button className="add-btn btn-small blue z-depth-2" type="submit">signup</Button>
                     </div>
                 </form>
                 {error && <div>Signup failed</div>}
@@ -91,7 +94,7 @@ const Signup = () => {
     </Card>
 </div>
 
-  
+
 
   )
 }

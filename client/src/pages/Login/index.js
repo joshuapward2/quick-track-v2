@@ -55,12 +55,12 @@ return(
     <div className="containerOne">
     <div className="card small">
         <div className="card-content">
-           <label for="email-login">email:</label>
+           <label htmlFor="email-login">email:</label>
             <form onSubmit={handleFormSubmit}>
                 <Row className="row">
                     <div className="input-field col s6">
                         <div>
-                        <label for="email-login">email:</label>
+                        <label htmlFor="email-login">email:</label>
                         <input
                           className="form-input"
                          placeholder="Your email"
@@ -72,7 +72,7 @@ return(
                          />
                         </div>
                         <div>
-                        <label for="password-login">password:</label>
+                        <label htmlFor="password-login">password:</label>
                         <input
                         className="form-input"
                          placeholder="******"
