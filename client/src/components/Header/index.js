@@ -22,13 +22,13 @@ return (
 //    </header>
 <nav>
     <div className="nav-wrapper">
-      <div className="brand-logo center"><i class="fa-solid fa-hippo fa-lg fa-flip"></i></div>
+      <div className="brand-logo center"><i className="fa-solid fa-hippo fa-lg"></i></div>
       {/* <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a> */}
       <ul className="right hide-on-med-and-down">
-        <li><a href="/home">Home</a></li>
-        <li><a href="/diet">Diet</a></li>
-        <li><a href="/Signup">Signup</a></li>
-        <li><a href="/Login">Login</a></li>
+        <li><Link to="/home">Home</Link></li>
+        <li><Link to="/diet">Diet</Link></li>
+        <li><Link to="/Signup">Signup</Link></li>
+        <li><Link to="/Login">Login</Link></li>
       </ul>
        {/* <ul class="side-nav" id="mobile-demo"> */}
          {/* <li><a href="sass.html">Sass</a></li> */}

@@ -13,7 +13,7 @@ return (
     indicators: true
   }}
 >
-  <div className="dark-grey">
+  <div className="red">
     <h2>
         Paleo
     </h2>
