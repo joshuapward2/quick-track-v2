@@ -4,7 +4,7 @@ import {Carousel} from 'react-materialize';
 
 function Diet() {
 return (
-<div> 
+
 <Carousel
   carouselId="Carousel-32"
   className="white-text center"
@@ -64,8 +64,8 @@ return (
         Many people follow this diet in hopes of losing weight. Some may use the program to identify food intolerances or achieve some of its proposed health benefits.
     </p>
   </div>
-</Carousel>
-</div>
+</Carousel> 
+
 )
 
 }
