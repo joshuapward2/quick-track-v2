@@ -22,6 +22,7 @@ import Footer from './components/Footer';
 
 // Destructuring React-router-dom
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { responsePathAsArray } from 'graphql';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
