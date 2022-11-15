@@ -26,10 +26,11 @@ return (
       <div className="brand-logo center"><i className="fa-solid fa-hippo fa-lg"></i></div>
       {/* <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a> */}
       <ul className="right hide-on-med-and-down">
-        <li><Link to="/home">Home</Link></li>
+        <li><Link to="/">Home</Link></li>
         <li><Link to="/diet">Diet</Link></li>
         <li><Link to="/Signup">Signup</Link></li>
         <li><Link to="/Login">Login</Link></li>
+        <li><Link to="/profile">Profile</Link></li>
       </ul>
        {/* <ul class="side-nav" id="mobile-demo"> */}
          {/* <li><a href="sass.html">Sass</a></li> */}
