@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {Carousel} from 'react-materialize';
 
+import { Button } from 'react-materialize';
+
 function Diet() {
+ 
 return (
 
 <Carousel
@@ -13,6 +16,7 @@ return (
     indicators: true
   }}
 >
+<Button className="add-btn btn-small blue z-depth-2" type="submit">Swipe using dots below</Button>
   <div className="red">
     <h2>
         Paleo
