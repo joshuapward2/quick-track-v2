@@ -47,10 +47,10 @@ const Signup = () => {
 <div className="containerOne">
     <Card className="card">
         <div className="card-content">
-            <span className="card-title">Create Account</span>
+            <span className="card-title center-align">Create Account</span>
             <form onSubmit={handleFormSubmit}>
                     <div>
-                    <label htmlFor="username-signup">username:</label>
+                      <h6><label htmlFor="username-signup" className="white-text">Username:</label></h6>
                     <input
                    className="form-input"
                    placeholder="Your username"
@@ -62,7 +62,7 @@ const Signup = () => {
                   />
                     </div>
                     <div>
-                    <label htmlFor="email-signup">email:</label>
+                    <label htmlFor="email-signup" className="white-text">Email:</label>
                     <input
                     className="form-input"
                     placeholder="Your email"
@@ -74,7 +74,7 @@ const Signup = () => {
                     />
                     </div>
                     <div>
-                    <label htmlFor="password-signup">password:</label>
+                    <label htmlFor="password-signup" className="white-text">Password:</label>
                     <input
                     className="form-input"
                     placeholder="******"
@@ -86,7 +86,7 @@ const Signup = () => {
                     />
                     </div>
                     <div>
-                    <Button className="add-btn btn-small blue z-depth-2" type="submit">signup</Button>
+                    <Button className="btn waves-effect waves-light" type="submit">signup</Button>
                     </div>
                 </form>
                 {error && <div>Signup failed</div>}
