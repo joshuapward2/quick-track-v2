@@ -54,11 +54,11 @@ function App() {
         <div className="container">
           <Routes>
             <Route
-              path="/home"
+              path="/"
               element={<Home />}
             />
             <Route
-              path="/"
+              path="/login"
               element={<Login />}
             />
             <Route 
