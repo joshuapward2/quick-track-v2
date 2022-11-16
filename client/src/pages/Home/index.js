@@ -9,7 +9,7 @@ return (
 
            <div>
             <div className="card">
-                <div className="card-content">
+                <div className="card-content z-depth-5">
                     <h3 className="total-calories center-align">
                         Total Calories:
                     </h3>

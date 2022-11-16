@@ -50,7 +50,7 @@ const Signup = () => {
             <span className="card-title center-align">Create Account</span>
             <form onSubmit={handleFormSubmit}>
                     <div>
-                      <h6><label htmlFor="username-signup" className="white-text">Username:</label></h6>
+                      <h6><label htmlFor="username-signup" className="white-text bold">Username:</label></h6>
                     <input
                    className="form-input"
                    placeholder="Your username"
@@ -86,7 +86,7 @@ const Signup = () => {
                     />
                     </div>
                     <div>
-                    <Button className="btn waves-effect waves-light" type="submit">signup</Button>
+                    <Button className="btn waves-effect waves-light purple" type="submit">signup</Button>
                     </div>
                 </form>
                 {error && <div>Signup failed</div>}
