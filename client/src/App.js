@@ -6,6 +6,7 @@ import Diet from './pages/Diet';
 import Home from './pages/Home';
 import Profile from './pages/Profile'
 import Signup from './components/Signup';
+import Test from './pages/Test';
 
 //importing apollo
 import {
@@ -52,6 +53,10 @@ function App() {
         <Header />
         <div className="container">
           <Routes>
+          <Route 
+                path="/Test" 
+                element={<Test />}
+                />
             <Route
               path="/"
               element={<Home />}

@@ -30,7 +30,11 @@ return (
         <li><Link to="/diet">Diet</Link></li>
         <li><Link to="/Signup">Signup</Link></li>
         <li><Link to="/Login">Login</Link></li>
+
+        <li><Link to="/Test">Test</Link></li>
+
         <li><Link to="/profile">Profile</Link></li>
+
       </ul>
        {/* <ul class="side-nav" id="mobile-demo"> */}
          {/* <li><a href="sass.html">Sass</a></li> */}

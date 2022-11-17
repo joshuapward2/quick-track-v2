@@ -17,6 +17,8 @@ code {
 
 .card {
   background-color: #404040;
+  border-radius: 25px;
+
 }
 
 .total-calories {
@@ -39,3 +41,15 @@ nav {
 .bg-secondary {
   background: color #404040 !important;
 }
+
+#logBox{
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(136, 0, 118, 0.274), 0 6px 20px 0 rgba(209, 10, 216, 0.137);
+  background: color #404040 !important;
+}
+
+.signupBox{
+  color: white;
+}
+
+
