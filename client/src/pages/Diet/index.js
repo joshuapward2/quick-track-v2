@@ -13,7 +13,8 @@ return (
   className="white-text center"
   options={{
     fullWidth: true,
-    indicators: true
+    indicators: true,
+    duration: 100
   }}
 >
 <Button className="add-btn btn-small blue z-depth-2" type="submit">Swipe using dots below</Button>
