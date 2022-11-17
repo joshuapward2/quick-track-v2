@@ -1,8 +1,26 @@
 import React,{useState} from 'react';
 import {Button} from "react-materialize"
+import { useParams } from 'react-router-dom';
+
+import { useQuery } from '@apollo/client';
+import { QUERY_CALORIES } from '../../utils/queries';
 
 function Home(props) {
     const [inputEl, setInputEl] = useState({ foodName: "" });
+	const { id: userId } = useParams();
+
+	const { loading, data } = useQuery(QUERY_CALORIES, {
+		variables: { id: userId},
+	});
+
+	const calories = data?.calories || {};
+	console.log(calories);
+
+	if (loading) {
+		return <div>Loading...</div>;
+	}
+
+
     const getFoodCalories = function(food) {
         const apiKey = 'BFf0c964XzuYJiOFGty6ww==5ftngSIBwJD00OqT';
         const mealUrl = 'https://api.calorieninjas.com/v1/nutrition?query=' + food;
@@ -17,6 +35,7 @@ function Home(props) {
                 console.log(data.items);
                 data.items.forEach(item => {
                     console.log(item)
+					listApiData(item);
                 });
             }
         })
@@ -29,11 +48,18 @@ function Home(props) {
             [name]: value,
         })
     };
-    const formSubmitHandler = async (event) => {
+    const formSubmitHandler = (event) => {
         event.preventDefault();
         const food = inputEl.foodName;
         getFoodCalories(food);
     };
+
+	const listApiData = (item) => {
+		let cal = item.calories
+		console.log(cal);
+	}
+	
+
 
     return (
         <div className="homeContainer">
@@ -79,6 +105,7 @@ function Home(props) {
                                         <i className="fa fa-plus"></i>
                                         &nbsp; Add Meal
                                     </Button>
+
                                 </div>
                             </form>
                         </div>
@@ -97,7 +124,8 @@ function Home(props) {
                     {/* <input type="text" placeholder='Search for foods' id='food-input'></input> */}
                     {/* <button className='btn' onClick={formSubmitHandler}> Search </button> */}
                 </div>
-                <ul id='list'></ul>
+                <ul id='list'>
+				</ul>
             </div>
         </div>
     )

@@ -1,37 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Table} from 'react-materialize';
 
 
-function Test() {
-    const inputEl = document.getElementById("food-input");
-    const listEl = document.getElementById('list');
-    const getFoodCalories = function(foodName) {
-        const apiKey = 'BFf0c964XzuYJiOFGty6ww==5ftngSIBwJD00OqT';
-        const mealUrl = 'https://api.calorieninjas.com/v1/nutrition?query=' + foodName;
-        fetch(mealUrl, {
-            method: 'GET',
-            headers: { 'X-Api-Key': apiKey},
-            contentType: 'application/json'
-        })
-            .then(response => response.json())
-            .then(data => {
-                let html = "";
-                if(data.items) {
-                console.log(data.items);
-                data.items.forEach(item => {
-                    console.log(item.calories)
-                });
-            }
-            listEl.innerHTML = html;
-            listEl.classList.remove('hidden')
-        })
-    }
-    const formSubmitHandler = function(event) {
-        event.preventDefault();
-        var foodName = inputEl.value.trim();
-        getFoodCalories(foodName);
-        inputEl.value = "";
-    }
+function Test(props) {
+  const [inputEl, setInputEl] = useState({ foodName: "" });
+  const getFoodCalories = function(food) {
+      const apiKey = 'BFf0c964XzuYJiOFGty6ww==5ftngSIBwJD00OqT';
+      const mealUrl = 'https://api.calorieninjas.com/v1/nutrition?query=' + food;
+      fetch(mealUrl, {
+          method: 'GET',
+          headers: { 'X-Api-Key': apiKey},
+          contentType: 'application/json'
+      })
+          .then(response => response.json())
+          .then(data => {
+              if(data.items) {
+              console.log(data.items);
+              data.items.forEach(item => {
+                  console.log(item)
+              });
+          }
+      })
+      .catch(err => console.error(err));
+  }
+  const handleChange = (event) => {
+      const {name, value} = event.target;
+      setInputEl({
+          ...inputEl,
+          [name]: value,
+      })
+  };
+  const formSubmitHandler = async (event) => {
+      event.preventDefault();
+      const food = inputEl.foodName;
+      getFoodCalories(food);
+  };
+
+  
 
 
     return (
@@ -104,6 +109,17 @@ highlight: true
 </Table>
 </div>
 {/* </div> */}
+<form onSubmit={formSubmitHandler}>
+    <input
+        type="name"
+        placeholder='Search for foods'
+        id='food-input'
+        name="foodName"
+        value={inputEl.foodName}
+        onChange={handleChange}
+        />
+    <button className='btn' type='submit'> Search </button>
+</form>
 </body>
     )
 }
