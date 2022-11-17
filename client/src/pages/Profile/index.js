@@ -1,4 +1,6 @@
 import React from 'react';
+import Auth from '../../utils/auth';
+import Login from '../Login';
 
 // //importing materialize
 // import 'materialize-css';
@@ -12,8 +14,17 @@ import React from 'react';
 // // import { QUERY_USER } from '../utils/queries';
 
 function Profile() {
+    if(Auth.loggedIn()) {
+        return (
+            <div>Write code here</div>
+        )
 
-//     // const { username: userParam } = useParams()
+    }
+    else{ 
+        return (<Login />)
+    }
+
+    // const { username: userParam } = useParams()
 
 //     // const { loading, data } = useQuery(QUERY_USER, {
 //     //     variables: { username: userParam }
@@ -25,15 +36,9 @@ function Profile() {
 //     //   if (loading) {
 //     //     return <div>Loading...</div>;
 //       }
-    return(
-//         <div>
-//             <h2 className="bg-dark text-secondary p-3 display-inline-block">
-//           Welcome {user.username} to your Profile page! This is where you'll find the tools you need to achieve your nutrtion goals!
-//         </h2>
+   
      
-//         </div>
-       <div></div>
-    )
+    
 
 }
 
