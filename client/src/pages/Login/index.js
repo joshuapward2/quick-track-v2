@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'materialize-css';
-import { Button, Card, Row, Col } from 'react-materialize';
+import { Button,Row } from 'react-materialize';
 
 //importing and destructuring link from react-router
 import {Link} from 'react-router-dom';
@@ -31,12 +31,12 @@ const Login = (props) => {
     // submit form
     const handleFormSubmit = async (event) => {
       event.preventDefault();
-  
+  console.log(formState.email)
       try {
         const { data } = await login({
           variables: { ...formState },
         });
-  
+  console.log(data)
         Auth.login(data.login.token);
       } catch (e) {
         console.error(e);
