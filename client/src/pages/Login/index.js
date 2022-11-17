@@ -84,7 +84,7 @@ return(
                          />
                         </div>
                         <div>
-                        <Button className="add-btn btn-small blue z-depth-2" type="submit">login</Button>
+                        <Button className="add-btn btn-small purple z-depth-2" type="submit">login</Button>
                         </div>
                     </div>
                 </Row>
@@ -92,10 +92,19 @@ return(
             {error && <div>Login failed</div>}
         </div>
     </div>
-    <h2>NOT A MEMBER?</h2>
-    <h3>PLease click the link below to signup</h3>
-    <Button className="add-btn btn-small green z-depth-2" type="submit"> <Link to="/signup">Signup</Link></Button>
-
+    <div className='signupBox'>
+    <div className='card'>
+      <div classname="card-content">
+        <div>
+    <div className='center'>NOT A MEMBER?</div>
+    <div className='center'>PLease click the link below to signup</div>
+    <div className='center'>
+    <Button className="add-btn btn-small purple z-depth-2" type="submit"> <Link to="/signup">Signup</Link></Button>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
 </div>
       
 
