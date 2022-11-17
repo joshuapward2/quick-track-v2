@@ -1,7 +1,6 @@
 import React,{useState} from 'react';
 import {Button} from "react-materialize"
 
-
 function Home(props) {
     const [inputEl, setInputEl] = useState({ foodName: "" });
     const getFoodCalories = function(food) {

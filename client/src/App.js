@@ -13,7 +13,8 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  createHttpLink,
+  HttpLink,
+  from,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
@@ -24,9 +25,9 @@ import Footer from './components/Footer';
 // Destructuring React-router-dom
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-const httpLink = createHttpLink({
-  uri: '/graphql',
-});
+const link = from([
+  new HttpLink({ uri: "http://localhost:3000/graphql" })
+]);
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
@@ -39,7 +40,7 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
+  link: authLink.concat(link),
   cache: new InMemoryCache(),
 });
 
@@ -65,22 +66,19 @@ function App() {
               path="/login"
               element={<Login />}
             />
-             <Route 
-                path="/signup" 
-                element={<Signup />} 
-              />
+            <Route 
+              path="/signup" 
+              element={<Signup />} 
+            />
             <Route 
               path="/diet"
               element={<Diet />}
             />
             {/* {/*Below can be used if we want render a certain page using a username if we decide to} */}
-
-             <Route path="/profile" element={<Profile />} />
-              
-           
-             
-
-           
+            <Route 
+              path="/profile" 
+              element={<Profile />}
+            />
           </Routes>
         </div>
         <Footer />
