@@ -1,12 +1,12 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {Button} from "react-materialize"
 
-function Home() {
-    const inputEl = document.getElementById("food-input");
-    const listEl = document.getElementById('list');
-    const getFoodCalories = function(foodName) {
+
+function Home(props) {
+    const [inputEl, setInputEl] = useState({ foodName: "" });
+    const getFoodCalories = function(food) {
         const apiKey = 'BFf0c964XzuYJiOFGty6ww==5ftngSIBwJD00OqT';
-        const mealUrl = 'https://api.calorieninjas.com/v1/nutrition?query=' + foodName;
+        const mealUrl = 'https://api.calorieninjas.com/v1/nutrition?query=' + food;
         fetch(mealUrl, {
             method: 'GET',
             headers: { 'X-Api-Key': apiKey},
@@ -14,23 +14,28 @@ function Home() {
         })
             .then(response => response.json())
             .then(data => {
-                let html = "";
                 if(data.items) {
                 console.log(data.items);
                 data.items.forEach(item => {
-                    console.log(item.calories)
+                    console.log(item)
                 });
             }
-            listEl.innerHTML = html;
-            listEl.classList.remove('hidden')
         })
+        .catch(err => console.error(err));
     }
-    const formSubmitHandler = function(event) {
+    const handleChange = (event) => {
+        const {name, value} = event.target;
+        setInputEl({
+            ...inputEl,
+            [name]: value,
+        })
+    };
+    const formSubmitHandler = async (event) => {
         event.preventDefault();
-        var foodName = inputEl.value.trim();
-        getFoodCalories(foodName);
-        inputEl.value = "";
-    }
+        const food = inputEl.foodName;
+        getFoodCalories(food);
+    };
+
     return (
         <div className="homeContainer">
             <div className="container">
@@ -79,8 +84,19 @@ function Home() {
                             </form>
                         </div>
                     </div>
-                    <input type="text" placeholder='Search for foods' id='food-input'></input>
-                    <button className='btn' onClick={formSubmitHandler}> Search </button>
+                    <form onSubmit={formSubmitHandler}>
+                        <input
+                            type="name"
+                            placeholder='Search for foods'
+                            id='food-input'
+                            name="foodName"
+                            value={inputEl.foodName}
+                            onChange={handleChange}
+                            />
+                        <button className='btn' type='submit'> Search </button>
+                    </form>
+                    {/* <input type="text" placeholder='Search for foods' id='food-input'></input> */}
+                    {/* <button className='btn' onClick={formSubmitHandler}> Search </button> */}
                 </div>
                 <ul id='list'></ul>
             </div>

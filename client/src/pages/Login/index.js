@@ -94,10 +94,14 @@ return(
     </div>
     <div className='signupBox'>
     <div className='card'>
+      <div classname="card-content">
+        <div>
     <div className='center'>NOT A MEMBER?</div>
     <div className='center'>PLease click the link below to signup</div>
     <div className='center'>
     <Button className="add-btn btn-small purple z-depth-2" type="submit"> <Link to="/signup">Signup</Link></Button>
+    </div>
+    </div>
     </div>
     </div>
     </div>
