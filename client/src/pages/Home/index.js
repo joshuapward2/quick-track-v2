@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import {Button} from "react-materialize"
 import { useParams } from 'react-router-dom';
 
@@ -7,6 +7,7 @@ import { QUERY_CALORIES } from '../../utils/queries';
 
 function Home(props) {
     const [inputEl, setInputEl] = useState({ foodName: "" });
+	const [nutrition, setNutrition] = useState([]);
 	const { id: userId } = useParams();
 
 	const { loading, data } = useQuery(QUERY_CALORIES, {
@@ -35,7 +36,7 @@ function Home(props) {
                 console.log(data.items);
                 data.items.forEach(item => {
                     console.log(item)
-					listApiData(item);
+					setNutrition(Object.values(item));
                 });
             }
         })
@@ -54,11 +55,11 @@ function Home(props) {
         getFoodCalories(food);
     };
 
-	const listApiData = (item) => {
-		let cal = item.calories
-		console.log(cal);
-	}
 	
+	const listApiData = async(item) => {
+		console.log(item)
+	}
+
 
 
     return (
@@ -71,7 +72,7 @@ function Home(props) {
                             <h3 className="total-calories center-align">
                                 Total Calories:
                             </h3>
-                            <div style= {{margin:"auto; width: 300px; height: 300px;"}}>
+                            <div style= {{margin:"auto; width: 300px; height: 300px"}}>
                                 <canvas id="myChart"></canvas>
                             </div>
                         </div>
@@ -81,9 +82,9 @@ function Home(props) {
                     <div className="card">
                         <div className="card-content">
                             <span className="card-title">Add Meal/ Food Item</span>
-                            <form className="" class="col">
+                            <form className="col">
                                 <div className="row">
-                                    <label for="item-name">Meal</label>
+                                    <label htmlFor="item-name">Meal</label>
                                     <div className="input-field col s6">
                                         <input
                                             name="post-title"
@@ -92,8 +93,8 @@ function Home(props) {
                                             id="item-name"
                                         />
                                     </div>
-                                    <label for="item-name">Calorie</label>
-                                    <div cclassName="input-field col s6">
+                                    <label htmlFor="item-name">Calorie</label>
+                                    <div className="input-field col s6">
                                         <input
                                             name="post-calories"
                                             type="number"
@@ -125,6 +126,7 @@ function Home(props) {
                     {/* <button className='btn' onClick={formSubmitHandler}> Search </button> */}
                 </div>
                 <ul id='list'>
+					
 				</ul>
             </div>
         </div>

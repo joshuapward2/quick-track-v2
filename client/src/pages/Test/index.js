@@ -1,28 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {Table} from 'react-materialize';
 
 
 function Test(props) {
   const [inputEl, setInputEl] = useState({ foodName: "" });
-  const getFoodCalories = function(food) {
+  const [nutrition, setNutrition] = useState([]);
+
+  const getFoodCalories = async (food) => {
       const apiKey = 'BFf0c964XzuYJiOFGty6ww==5ftngSIBwJD00OqT';
       const mealUrl = 'https://api.calorieninjas.com/v1/nutrition?query=' + food;
-      fetch(mealUrl, {
+      const response = await fetch(mealUrl, {
           method: 'GET',
           headers: { 'X-Api-Key': apiKey},
           contentType: 'application/json'
       })
-          .then(response => response.json())
-          .then(data => {
-              if(data.items) {
-              console.log(data.items);
-              data.items.forEach(item => {
-                  console.log(item)
-              });
-          }
-      })
       .catch(err => console.error(err));
-  }
+
+      if(response) {
+        const nutrition = response.data;
+
+        console.log('Nutrition:', nutrition);
+        setNutrition(nutrition);
+      }
+  };
+
+  useEffect(() => {
+    getFoodCalories();
+  }, []);
+
   const handleChange = (event) => {
       const {name, value} = event.target;
       setInputEl({
@@ -30,6 +35,7 @@ function Test(props) {
           [name]: value,
       })
   };
+
   const formSubmitHandler = async (event) => {
       event.preventDefault();
       const food = inputEl.foodName;
