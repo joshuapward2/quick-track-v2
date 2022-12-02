@@ -45,7 +45,7 @@ function Home(props) {
                             <h3 className="total-calories center-align">
                                 Total Calories:
                             </h3>
-                            <div style= {{margin:"auto; width: 300px; height: 300px;"}}>
+                            <div style= {{margin:"auto; width: 300px; height: 300px"}}>
                                 <canvas id="myChart"></canvas>
                             </div>
                         </div>
@@ -55,9 +55,9 @@ function Home(props) {
                     <div className="card">
                         <div className="card-content">
                             <span className="card-title">Add Meal/ Food Item</span>
-                            <form className="" class="col">
+                            <form className="col">
                                 <div className="row">
-                                    <label for="item-name">Meal</label>
+                                    <label htmlFor="item-name">Meal</label>
                                     <div className="input-field col s6">
                                         <input
                                             name="post-title"
@@ -66,8 +66,8 @@ function Home(props) {
                                             id="item-name"
                                         />
                                     </div>
-                                    <label for="item-name">Calorie</label>
-                                    <div cclassName="input-field col s6">
+                                    <label htmlFor="item-name">Calorie</label>
+                                    <div className="input-field col s6">
                                         <input
                                             name="post-calories"
                                             type="number"

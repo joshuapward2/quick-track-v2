@@ -6,7 +6,7 @@ import { ADD_USER } from '../../utils/mutations';
 
 
 //Materialize import
-import { Button, Card, Row, Col } from 'react-materialize';
+import { Button, Card, } from 'react-materialize';
 
 import Auth from '../../utils/auth';
 
